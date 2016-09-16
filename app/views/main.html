@@ -1,0 +1,33 @@
+<div class="list" style="margin-bottom:8px">
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Book
+        </div>
+        <select ng-model="book" ng-options="book.book for book in books track by book.id"></select>
+    </label>
+</div>
+
+<div class="list" style="margin-bottom:8px">
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Months
+        </div>
+        <select ng-model="month" ng-options="month for month in allMonths track by month"></select>
+    </label>
+</div>
+
+<div class="list" style="margin-bottom:8px">
+
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Years
+        </div>
+        <select ng-model="year" ng-options="year for year in allYears track by year"></select>
+    </label>
+</div>
+
+<div class="card-green">
+    <div class="item item-text-wrap">
+        To read <b>{{book.book}}</b> in {{year == 0 ? '' : year}} {{year == 1 ? 'year' : year !== 0 ? 'years' :'' }} {{year !== 0 && month !== 0 ? 'and' : ''}} {{month == 0 ? '' : month}} {{month == 1 ? 'month' : month !== 0 ? 'months': ''}} you will have to read <b>{{formatPages(book, year, month)}} </b>{{formatPages(book, year, month) == 1 ? 'page' : 'pages'}} a day
+    </div>
+</div>
