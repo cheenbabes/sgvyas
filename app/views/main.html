@@ -1,33 +1,34 @@
-<div class="list" style="margin-bottom:8px">
-    <label class="item item-input item-select">
-        <div class="input-label">
-            Book
-        </div>
-        <select ng-model="book" ng-options="book.book for book in books track by book.id"></select>
-    </label>
-</div>
-
-<div class="list" style="margin-bottom:8px">
-    <label class="item item-input item-select">
-        <div class="input-label">
-            Months
-        </div>
-        <select ng-model="month" ng-options="month for month in allMonths track by month"></select>
-    </label>
-</div>
-
-<div class="list" style="margin-bottom:8px">
-
-    <label class="item item-input item-select">
-        <div class="input-label">
-            Years
-        </div>
-        <select ng-model="year" ng-options="year for year in allYears track by year"></select>
-    </label>
-</div>
-
-<div class="card-green">
-    <div class="item item-text-wrap">
-        To read <b>{{book.book}}</b> in {{year == 0 ? '' : year}} {{year == 1 ? 'year' : year !== 0 ? 'years' :'' }} {{year !== 0 && month !== 0 ? 'and' : ''}} {{month == 0 ? '' : month}} {{month == 1 ? 'month' : month !== 0 ? 'months': ''}} you will have to read <b>{{formatPages(book, year, month)}} </b>{{formatPages(book, year, month) == 1 ? 'page' : 'pages'}} a day
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="inputBook" class="col-sm-2 control-label">Book</label>
+    <div class="col-sm-10">
+        <select class="form-control" ng-model="book" ng-options="book.book for book in books track by book.id"></select>
     </div>
+  </div>
+  <div class="form-group">
+    <label for="inputMonth" class="col-sm-2 control-label">Months</label>
+    <div class="col-sm-10">
+        <select class="form-control" ng-model="month" ng-options="month for month in allMonths track by month"></select>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="inputYear" class="col-sm-2 control-label">Years</label>
+    <div class="col-sm-10">
+        <select class="form-control" ng-model="year" ng-options="year for year in allYears track by year"></select>
+      </div>
+  </div>
+</form>
+
+<!--
+notes:
+1. maha mantra should be smaller to fit on all screens and centered along the bottom
+2. Text in green box should also be centered.
+3. Main title to be centered
+4. Backgroudn image
+-->
+
+
+
+<div class="alert alert-success center">
+        To read <b>{{book.book}}</b> in {{year == 0 ? '' : year}} {{year == 1 ? 'year' : year !== 0 ? 'years' :'' }} {{year !== 0 && month !== 0 ? 'and' : ''}} {{month == 0 ? '' : month}} {{month == 1 ? 'month' : month !== 0 ? 'months': ''}} you will have to read <b>{{formatPages(book, year, month)}} </b>{{formatPages(book, year, month) == 1 ? 'page' : 'pages'}} a day
 </div>
