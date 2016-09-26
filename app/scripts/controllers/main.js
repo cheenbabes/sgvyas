@@ -32,7 +32,7 @@ angular.module('sagepageApp')
  },
         {
             id: 5,
-            book: "Bhagavad Gita As It Is",
+            book: "Bhagavad-gita As It Is",
             pages: 868
  },
         {
